@@ -1,5 +1,6 @@
 package service;
-import enums.StatusPedido;
+
+import model.StatusPedido;
 import model.Cliente;
 import model.Pedido;
 import model.Produto;
@@ -35,11 +36,10 @@ public class PedidoService {
             pedido.adicionarItem(produto, quantidade, precoVenda);
         }
     }
-
-    public void removerItem(int pedidoId, int index) {
+    public void removerItem(int pedidoId, int itemIndex) {
         Pedido pedido = buscarPedido(pedidoId);
         if (pedido != null) {
-            pedido.removerItem(index);
+            pedido.removerItem(itemIndex);
         }
     }
 

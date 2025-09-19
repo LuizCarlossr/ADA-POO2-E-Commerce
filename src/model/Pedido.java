@@ -1,5 +1,5 @@
 package model;
-import enums.StatusPedido;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -57,7 +57,7 @@ public class Pedido {
     }
 
     public void finalizar() {
-        if (status != StatusPedido.ABERTO || itens.isEmpty() || calcularTotal() <= 0) {
+        if (status != StatusPedido.ABERTO || itens.isEmpty()) {
             throw new IllegalStateException("Pedido inválido para finalização.");
         }
         this.status = StatusPedido.AGUARDANDO_PAGAMENTO;
